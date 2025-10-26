@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+
+# MongoDB local data
+data/
+dump/
+
+# Optional: vscode folder
+.vscode/
+
+# Optional: Mac system metadata
+.Trashes
+.AppleDouble
