@@ -2,7 +2,7 @@ const express = require("express");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const eventRoutes = require("./routes/eventRoutes");
-
+const teamRoutes = require("./routes/teamRoutes")
 const app = express();
 require("dotenv").config();
 
@@ -10,6 +10,9 @@ app.use(express.json());
 app.use("/auth", authRoutes);
 
 app.use("/events", eventRoutes);
+
+app.use("/teams", teamRoutes);
+
 
 connectDB();
 // Simple test route
