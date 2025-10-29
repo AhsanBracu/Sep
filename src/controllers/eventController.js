@@ -1,7 +1,18 @@
 // controllers/eventController.js
 const Event = require("../models/Event");
 
-exports.createEvent = async (req, res) => {
+// GET /events
+const getEvents = async (req, res) => {
+  try {
+    const events = await Event.find().sort({ createdAt: -1 });
+    res.status(200).json(events);
+  } catch (error) {
+    console.error("Error fetching events:", error);
+    res.status(500).json({ message: "Failed to fetch events" });
+  }
+};
+
+const createEvent = async (req, res) => {
   try {
     const {
       // from client form
@@ -87,3 +98,5 @@ exports.listEvents = async (_req, res) => {
     return res.status(500).json({ message: "Failed to fetch events" });
   }
 };
+
+module.exports = { getEvents, createEvent };
