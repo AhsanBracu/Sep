@@ -127,7 +127,7 @@ const validate = () => {
     <div className="flex justify-center p-6">
       {/* 3) Do NOT add a changing `key` prop to this form or its parents */}
       <form onSubmit={submitForm} className="w-full max-w-4xl bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-xl p-8 space-y-6 text-white">
-        <h2 className="text-2xl font-semibold text-center mb-6">Client Request Details</h2>
+        <h2 className="text-2xl font-semibold text-center mb-6">Client Event Request Details</h2>
 
         <div className="grid md:grid-cols-2 gap-6">
           <div>

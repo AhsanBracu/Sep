@@ -3,7 +3,7 @@ import { UserCircleIcon, ArrowRightOnRectangleIcon } from "@heroicons/react/24/o
 export default function Header({ onLogout }) {
   return (
     <header className="flex items-center justify-between px-6 py-3 bg-slate-900/80 border-b border-white/10 backdrop-blur-sm sticky top-0 z-50">
-      <h1 className="text-xl font-semibold text-white">Client Request System</h1>
+      <h1 className="text-xl font-semibold text-white">Event Request System</h1>
 
       <div className="flex items-center gap-4">
         {/* Avatar */}
