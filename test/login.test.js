@@ -26,33 +26,33 @@ async function login(email, password) {
   return jwt.sign({ id: user._id, role: user.role }, "testSecret");
 }
 
-    // (async function testLoginSuccess() {
-    //   await mongoose.connect("mongodb://127.0.0.1:27017/sep");
-    //   const user = await setupTestUser();
+    (async function testLoginSuccess() {
+      await mongoose.connect("mongodb://127.0.0.1:27017/sep");
+      const user = await setupTestUser();
 
-    //   const token = await login("ahsan@example.com", "123456");
+      const token = await login("ahsan@example.com", "123456");
 
-    //   assertEqual(typeof token, "string", "JWT is returned on successful login");
+      assertEqual(typeof token, "string", "JWT is returned on successful login");
 
-    //   console.log("✅ Login test passed using real MongoDB");
-    //   mongoose.disconnect();
-    // })();
+      console.log("✅ Login test passed using real MongoDB");
+      mongoose.disconnect();
+    })();
 
-(async function testLoginAPI() {
-  try {
-    const res = await axios.post("http://localhost:8000/auth/login", {
-      email: "ahsan@example.com",
-      password: "123456"
-    });
+// (async function testLoginAPI() {
+//   try {
+//     const res = await axios.post("http://localhost:8000/auth/login", {
+//       email: "ahsan@example.com",
+//       password: "123456"
+//     });
 
-    if (!res.data.token) {
-      throw new Error("Token not returned");
-    }
+//     if (!res.data.token) {
+//       throw new Error("Token not returned");
+//     }
 
-    console.log("✅ API Login test passed, token received ✅");
+//     console.log("✅ API Login test passed, token received ✅");
 
-  } catch (err) {
-    console.error("❌ API Login test failed:", err.response?.data || err.message);
-    process.exit(1);
-  }
-})();
+//   } catch (err) {
+//     console.error("❌ API Login test failed:", err.response?.data || err.message);
+//     process.exit(1);
+//   }
+// })();
