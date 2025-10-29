@@ -4,7 +4,7 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const eventRoutes = require("./routes/eventRoutes");
-
+const teamRoutes = require("./routes/teamRoutes")
 const app = express();
 require("dotenv").config();
 
@@ -15,6 +15,9 @@ app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 
 app.use("/events", eventRoutes);
+
+app.use("/teams", teamRoutes);
+
 
 connectDB();
 // Simple test route
