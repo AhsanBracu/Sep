@@ -24,12 +24,11 @@ export default function App() {
       <main className="ml-64 flex-1 flex flex-col h-screen overflow-hidden">
         <Header onLogout={handleLogout} />
         <div className="flex-1 overflow-y-auto">
-          <EventForm onSubmitted={() => setView("list")} />
-          {/* {view === "new" ? (
+          {view === "new" ? (
             <EventForm onSubmitted={() => setView("list")} />
           ) : (
             <RequestsList />
-          )} */}
+          )}
         </div>
       </main>
     </div>
