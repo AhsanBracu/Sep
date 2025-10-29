@@ -49,7 +49,7 @@ async function login(email, password) {
       throw new Error("Token not returned");
     }
 
-    console.log("✅ API Login test passed, token received ✅");
+    console.log("✅ API Login test passed, token received ✅",res.data.token);
 
   } catch (err) {
     console.error("❌ API Login test failed:", err.response?.data || err.message);

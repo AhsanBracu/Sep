@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* prevent white flash and ensure full-height gradient */
+html, body, #root {
+  height: 100%;
+}
+body {
+  @apply bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800;
+  overscroll-behavior: none; /* avoids white on iOS/mac bounce */
+}
