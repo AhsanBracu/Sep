@@ -59,9 +59,16 @@ const EventSchema = new mongoose.Schema(
 );
 
 // Optional: ensure start <= end
-EventSchema.pre("save", function (next) {
+// EventSchema.pre("save", function (next) {
+//   if (this.startDate && this.endDate && this.startDate > this.endDate) {
+//     return next(new Error("startDate must be before endDate"));
+//   }
+//   next();
+// });
+
+EventSchema.pre('validate', function(next) {
   if (this.startDate && this.endDate && this.startDate > this.endDate) {
-    return next(new Error("startDate must be before endDate"));
+    this.invalidate('endDate', 'End date must be after start date.');
   }
   next();
 });
