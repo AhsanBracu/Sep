@@ -15,6 +15,7 @@ export default function Login({ onSuccess }) {
       });
       if (!data.token) throw new Error("Token not returned");
       setMsg("✅ Login successful");
+      localStorage.setItem("token", data.token);
       onSuccess(); // switch to form
     } catch (err) {
       setMsg("❌ " + (err.response?.data || err.message));

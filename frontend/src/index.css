@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.input {
-  @apply w-full px-4 py-2 rounded-lg bg-white/15 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400;
+/* prevent white flash and ensure full-height gradient */
+html, body, #root {
+  height: 100%;
+}
+body {
+  @apply bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800;
+  overscroll-behavior: none; /* avoids white on iOS/mac bounce */
 }
